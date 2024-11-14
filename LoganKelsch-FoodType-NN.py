@@ -160,9 +160,7 @@ plt.legend(['Train', 'Validation'], loc='upper right')
 plt.show()
 
 #predicting the test set results
-y_true = np.argmax(y_test, axis=1)  #this avoided bugs for me in my personal 
-                                    #project, am unsure what it does, and kept it
-y_pred = np.argmax(model.predict(X_test), axis=1)  #prediction values for all data
+y_pred = np.argmax(model.predict(X_test), axis=1) #no one-hot encoding needed for this dataset
 
 #confusion matrix creation
 cm = confusion_matrix(y_true, y_pred)
